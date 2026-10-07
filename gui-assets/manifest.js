@@ -1,0 +1,768 @@
+// Generated from manifest.json; keep in sync. Enables offline file:// preview.
+window.STORM_GUI_MANIFEST = {
+  "schemaVersion": 1,
+  "name": "Tornado Survival \u2014 Viral Simulator GUI Art",
+  "version": "1.0.0",
+  "coordinates": "Native-image pixels. Rect is [x, y, width, height], origin top-left. Rectangles are measured from delivered art, NOT assumed equal-grid cells.",
+  "textures": {
+    "Panel": {
+      "file": "textures/panel-shell.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "fb54f64408481ea757cf4981c27db8225e6e91ccd1d333a6da8f6f4cc99f19ca",
+      "uploadId": ""
+    },
+    "Icons": {
+      "file": "textures/navigation-icons.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "7028c798d62c3d6ad924dbeb70c503bb0369f89511318c84a95d93b254adaa9a",
+      "uploadId": ""
+    },
+    "Controls": {
+      "file": "textures/controls-atlas.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "a28b5bc1e242a2767a6d8f6ae75e189aa5f1d5e79177e51ab86d2792966850fa",
+      "uploadId": ""
+    },
+    "Headers": {
+      "file": "textures/headers-atlas.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "b7a99be771b3a9a276d5c9c1511f2011b61f5b01d477352c113c7d5f220e01a2",
+      "uploadId": ""
+    },
+    "Cards": {
+      "file": "textures/rarity-cards.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "73dcd5b9ed23aed210986cadbba4b45f7c37437e8cb6e5af50baed655df945b8",
+      "uploadId": ""
+    }
+  },
+  "sprites": {
+    "panel.shell": {
+      "texture": "Panel",
+      "rect": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "scaleType": "Slice",
+      "aspectRatio": 1.0,
+      "contentInset": [
+        90,
+        90,
+        90,
+        90
+      ],
+      "sliceCenter": [
+        112,
+        112,
+        1142,
+        1142
+      ],
+      "note": "SliceCenter uses [left, top, right, bottom], unlike rect. Borders contain the frame; keep labels at least 24 display pixels inside."
+    },
+    "control.green": {
+      "texture": "Controls",
+      "rect": [
+        21,
+        106,
+        601,
+        217
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.76959,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.greenHover": {
+      "texture": "Controls",
+      "rect": [
+        633,
+        106,
+        601,
+        217
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.76959,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.greenPressed": {
+      "texture": "Controls",
+      "rect": [
+        21,
+        370,
+        601,
+        217
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.76959,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.disabled": {
+      "texture": "Controls",
+      "rect": [
+        633,
+        370,
+        601,
+        217
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.76959,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.blue": {
+      "texture": "Controls",
+      "rect": [
+        21,
+        649,
+        601,
+        217
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.76959,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.gold": {
+      "texture": "Controls",
+      "rect": [
+        633,
+        649,
+        601,
+        219
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.74429,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.orange": {
+      "texture": "Controls",
+      "rect": [
+        21,
+        917,
+        601,
+        218
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.75688,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "control.pink": {
+      "texture": "Controls",
+      "rect": [
+        633,
+        917,
+        601,
+        218
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.75688,
+      "contentInset": [
+        56,
+        24,
+        56,
+        45
+      ]
+    },
+    "header.base": {
+      "texture": "Headers",
+      "rect": [
+        10,
+        146,
+        613,
+        207
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.96135,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.index": {
+      "texture": "Headers",
+      "rect": [
+        630,
+        147,
+        615,
+        206
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.98544,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.pets": {
+      "texture": "Headers",
+      "rect": [
+        10,
+        400,
+        613,
+        207
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.96135,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.rewards": {
+      "texture": "Headers",
+      "rect": [
+        631,
+        401,
+        615,
+        207
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.97101,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.gifts": {
+      "texture": "Headers",
+      "rect": [
+        10,
+        656,
+        613,
+        206
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.97573,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.quests": {
+      "texture": "Headers",
+      "rect": [
+        630,
+        656,
+        616,
+        206
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.99029,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.rebirth": {
+      "texture": "Headers",
+      "rect": [
+        9,
+        910,
+        615,
+        208
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.95673,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "header.warning": {
+      "texture": "Headers",
+      "rect": [
+        630,
+        910,
+        615,
+        208
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 2.95673,
+      "contentInset": [
+        30,
+        20,
+        30,
+        46
+      ]
+    },
+    "card.common": {
+      "texture": "Cards",
+      "rect": [
+        15,
+        44,
+        301,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53369,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.uncommon": {
+      "texture": "Cards",
+      "rect": [
+        324,
+        44,
+        299,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53014,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.rare": {
+      "texture": "Cards",
+      "rect": [
+        631,
+        44,
+        301,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53369,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.epic": {
+      "texture": "Cards",
+      "rect": [
+        939,
+        44,
+        301,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53369,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.legendary": {
+      "texture": "Cards",
+      "rect": [
+        15,
+        645,
+        301,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53274,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.mythic": {
+      "texture": "Cards",
+      "rect": [
+        324,
+        645,
+        299,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.5292,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.locked": {
+      "texture": "Cards",
+      "rect": [
+        630,
+        645,
+        303,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53628,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.selected": {
+      "texture": "Cards",
+      "rect": [
+        940,
+        645,
+        299,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.5292,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "icon.freeRewards": {
+      "texture": "Icons",
+      "rect": [
+        59,
+        75,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.base": {
+      "texture": "Icons",
+      "rect": [
+        366,
+        78,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.pets": {
+      "texture": "Icons",
+      "rect": [
+        662,
+        84,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.playtime": {
+      "texture": "Icons",
+      "rect": [
+        971,
+        83,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.quests": {
+      "texture": "Icons",
+      "rect": [
+        60,
+        382,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.rebirth": {
+      "texture": "Icons",
+      "rect": [
+        363,
+        379,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.pass": {
+      "texture": "Icons",
+      "rect": [
+        656,
+        381,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.settings": {
+      "texture": "Icons",
+      "rect": [
+        965,
+        379,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.cash": {
+      "texture": "Icons",
+      "rect": [
+        57,
+        677,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.strength": {
+      "texture": "Icons",
+      "rect": [
+        365,
+        669,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.tornado": {
+      "texture": "Icons",
+      "rect": [
+        663,
+        668,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.luck": {
+      "texture": "Icons",
+      "rect": [
+        971,
+        677,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.build": {
+      "texture": "Icons",
+      "rect": [
+        63,
+        958,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.salvage": {
+      "texture": "Icons",
+      "rect": [
+        371,
+        960,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.shield": {
+      "texture": "Icons",
+      "rect": [
+        662,
+        959,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    },
+    "icon.close": {
+      "texture": "Icons",
+      "rect": [
+        969,
+        961,
+        240,
+        240
+      ],
+      "scaleType": "Fit",
+      "aspectRatio": 1,
+      "contentInset": [
+        12,
+        12,
+        12,
+        12
+      ]
+    }
+  },
+  "colors": {
+    "ink": "#101018",
+    "panel": "#151722",
+    "white": "#ffffff",
+    "income": "#a6ff51",
+    "orange": "#ff7b00",
+    "pink": "#ff18b4",
+    "lime": "#75fa00",
+    "cyan": "#00cfff",
+    "gold": "#ffc800",
+    "violet": "#8524ff",
+    "warning": "#ff232d"
+  }
+};
