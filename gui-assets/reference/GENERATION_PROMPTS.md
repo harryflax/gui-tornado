@@ -26,3 +26,16 @@ Rarity cards: remove every repeated stud. Smooth bright-to-dark gradients with a
 ## Coordinate handling
 
 The delivered version 1.1 PNGs are 1254×1254. Generation does not guarantee fixed positioning or dimensions. Re-measure artwork after any regeneration; update manifest.json, manifest.js, the Luau adapter and SHA-256 hashes together. All sprite names remain compatible with version 1.0 but the four revised atlas image IDs and coordinates must be replaced together.
+
+## Version 1.2 supplementary artwork
+
+The existing five textures are unchanged. A new transparent 6-column × 4-row sheet adds these simple original-game motifs, with smooth shading, generous gutters and no text:
+
+1. Toilet, pig, mailbox, mallard duck, pink tulip, water fountain.
+2. Bee, tent-like gazebo symbol, golden cow, blue diamond, gold crown, money bag.
+3. Owl, penguin, bunny, hamster, puppy, kitten.
+4. Fox, green dragon, cream egg, cardboard crate, rocket, catching hands.
+
+Actual output: 1536 × 1024. The delivered alpha channel removes the background; measure silhouettes instead of assuming equal grid cells. The two hands share one crop. Coordinates and hash are recorded separately in `content-manifest.json`, `content-manifest.js` and `roblox/ScreenItemAssets.luau`.
+
+`storm-background.png` was generated from the user's original HUD screenshot with its UI removed: retain the storm-dark village, grassy terrain, houses, water tower, player and pets; no menus, text or icons. This opaque background is presentation-only. Full-screen menus are rendered from editable HTML/CSS using the source atlas images, so labels and prices remain separate layers in the source.

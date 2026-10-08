@@ -1,6 +1,8 @@
 # Tornado-survival GUI image pack
 
-Version 1.1 uses smooth surfaces without studs, full-width colored headers, and simpler icons based on your original game (including the Farm cow and Quests parchment).
+Version 1.2 adds **11 complete 1920 × 1080 screens based on your original game menus**, plus 24 matching item/pet illustrations. Smooth surfaces, full-width colored headers and familiar game icons are retained.
+
+**[View all finished full-screen images](FULL_SCREENS.md).** To run the preview, download the repository ZIP, extract it, then open **`gui-assets/screens.html`**.
 
 Finished transparent PNG assets inspired by your **later viral-game reference upload**, mapped to the features in your existing tornado-survival GUI. No web project or replacement game is required.
 
@@ -15,14 +17,17 @@ Finished transparent PNG assets inspired by your **later viral-game reference up
 | `textures/controls-atlas.png` | 8 blank button faces, including green normal/hover/pressed and gray disabled |
 | `textures/rarity-cards.png` | 8 blank collectible card backgrounds: six rarities, locked, selected |
 | `textures/panel-shell.png` | One reusable dark nine-slice modal frame |
+| `textures/menu-items.png` | 24 additional item/pet illustrations; separate `content-manifest.json` |
 
-**41 named elements across 5 RGBA PNGs**, each 1254 × 1254 pixels. They have actual alpha transparency. The checkerboard visible in the preview is only a transparency aid, not part of the files. Image-generation output dimensions were measured; do not assume 1024 × 1024 or equal grid cells.
+**41 named elements across 5 core RGBA PNGs**, each 1254 × 1254 pixels, plus **24 item illustrations** in one 1536 × 1024 RGBA atlas. They have actual alpha transparency. The checkerboard visible in the preview is only a transparency aid, not part of the files. Image-generation output dimensions were measured; do not assume 1024 × 1024 or equal grid cells.
 
 `manifest.json` provides measured pixel rectangles, scaling modes, content padding, color tokens and file hashes. `roblox/StormGuiAssets.luau` contains the same named coordinates and an appearance-only adapter for ImageLabels/ImageButtons. Empty image IDs are intentional; no Roblox upload has been performed.
 
 ## Preview
 
-Open **`preview.html` directly in a browser**. It works offline, without installation. Keep `preview.js`, `manifest.js`, and `textures/` beside it. It shows My Farm, Daily Rewards, Quests and HUD layout studies, plus every sprite and complete PNG sheet. Text, item names and values in these layout studies are illustrative overlays, not baked into the images or proposed changes to your economy.
+Open **`screens.html` for the complete menus**; keep this entire folder together. See [FULL_SCREENS.md](FULL_SCREENS.md) for PNG links and instructions.
+
+Open **`preview.html` for the original asset gallery and small layout studies**. It works offline, without installation. Keep `preview.js`, `manifest.js`, and `textures/` beside it. It shows My Farm, Daily Rewards, Quests and HUD layout studies, plus every sprite and complete PNG sheet. Text, item names and values in these layout studies are illustrative overlays, not baked into the images or proposed changes to your economy.
 
 Alternatively, from the repository root:
 
@@ -30,13 +35,15 @@ Alternatively, from the repository root:
 python3 -m http.server 8030 --directory gui-assets --bind 127.0.0.1
 ```
 
-Open `preview.html` on that local server in your own browser. Stop the server with Ctrl+C. This chat's cloud onboarding UI does not provide a public web preview.
+Open `screens.html` on that local server in your own browser. Stop the server with Ctrl+C. This chat's cloud onboarding UI does not provide a public web preview.
 
 ## Use in Roblox
 
-1. Upload the **five full PNGs** to the actual experience owner/group. Follow [the upload checklist](roblox/UPLOAD_CHECKLIST.md).
+1. Upload the **five core PNGs** to the actual experience owner/group. Follow [the upload checklist](roblox/UPLOAD_CHECKLIST.md).
 2. Supply their image content IDs in `StormGuiAssets.luau`. If Roblox resizes the files during upload, set the actual dimensions in `Assets.UploadedSizes`; the module scales crop coordinates automatically.
 3. Ask Claude Code to apply them to the existing UI following [the screen recipes](roblox/ScreenRecipes.md). All numbers, labels, rarity badges, item/pet renderings, progress fills and purchase logic remain native game objects.
+
+For the additional item artwork, upload `menu-items.png` and configure `roblox/ScreenItemAssets.luau` using `content-manifest.json`. The full-screen PNGs and storm background are presentation references.
 
 When replacing version 1.0, upload the four revised atlases and update their IDs, sprite coordinates and the helper module together. The panel-shell PNG is unchanged.
 
@@ -63,7 +70,7 @@ From the repository root, with Python 3 (standard library only):
 python3 gui-assets/tools/validate_assets.py
 ```
 
-Checks PNG structure and CRCs, decompressed image sizes, RGBA format, SHA-256 hashes, sprite bounds, panel slice bounds, manifest synchronization and required handoff files. The pack was also checked for alpha transparency and inspected in a browser at desktop and phone widths. See [VALIDATION.md](VALIDATION.md) for actual completed checks.
+Checks PNG structure and CRCs, decompressed image sizes, texture hashes, 65 sprite bounds, panel slice bounds, manifest synchronization, all eleven full-HD exports and required handoff files. The pack was also checked for alpha transparency and inspected in a browser at desktop and phone widths. See [VALIDATION.md](VALIDATION.md) for actual completed checks.
 
 Roblox image moderation, asset ownership permissions, final uploaded dimensions, Studio rendering, and integration with the real game must be verified in Studio. The game source is not present in this repository, so no live game UI or gameplay script has been modified.
 

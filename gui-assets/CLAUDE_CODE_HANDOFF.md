@@ -8,15 +8,24 @@ Reskin my EXISTING Roblox tornado-survival game using `gui-assets/`. This is an 
 
 First read:
 
-1. `gui-assets/README.md`
-2. `gui-assets/reference/REFERENCE_MAP.md`
-3. `gui-assets/manifest.json`
-4. `gui-assets/roblox/StormGuiAssets.luau`
-5. `gui-assets/roblox/ScreenRecipes.md`
+1. `gui-assets/FULL_SCREENS.md` and all eleven `gui-assets/screens/` menu PNGs
+2. `gui-assets/screens.html`, `screens.css`, `screens.js` for layered layout geometry
+3. `gui-assets/content-manifest.json` and `roblox/ScreenItemAssets.luau`
+4. `gui-assets/README.md`
+5. `gui-assets/reference/REFERENCE_MAP.md`
+6. `gui-assets/manifest.json`
+7. `gui-assets/roblox/StormGuiAssets.luau`
+8. `gui-assets/roblox/ScreenRecipes.md`
 
 My game loop is: build a base with friends in short rounds, survive the tornado, collect storm loot, return it to the base, earn cash per second. The screenshots uploaded in commit `8b81e70` show my existing screens. The screenshots uploaded later in `59b573c` show the viral-game visual direction I want. Preserve my screen names, features, and existing data. Use the brighter, squarer, bold-outline style of the later references.
 
-## Latest visual corrections (v1.1)
+## Full-screen designs (v1.2)
+
+Use the eleven complete designs as the primary visual targets: Farm Loot, Index, Pets, Eggs, Free Rewards, Playtime Gifts, Quests, Rebirth, Decor, Storm Pass and HUD. Preserve their original menu structure and familiar icons. The HTML/CSS is editable reference geometry; rebuild the appearance using the existing Roblox UI and data bindings. Do not flatten entire screens into ImageLabels.
+
+The sixth texture, `menu-items.png`, contains 24 optional item/pet illustrations with measured crops and a separate adapter. Set its real uploaded image ID if using it. Retain existing game thumbnails when needed to show accurate mutations or models. Read the sample-data exceptions in FULL_SCREENS.md; visible preview values are not gameplay configuration.
+
+## Retained visual corrections (v1.1)
 
 Use the updated smooth textures: no stud patterns. Headers must span the full modal interior width; apply padding to title children rather than insetting the header itself. The adapter includes a native header background color to fill transparent edge pixels. Icons now follow the original simple game motifs: Farm/loot cow, parchment quest, brown paws, simple banknotes and a gray-blue tornado. Re-upload the four revised atlases and refresh their IDs and mappings together.
 

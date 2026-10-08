@@ -1,8 +1,19 @@
 # Validation record
 
-Version 1.1 verified on 7 October 2026.
+Version 1.2 full-screen pack verified on 8 October 2026. Core atlas checks from version 1.1 were also rerun.
 
-## Passed
+## Full-screen checks passed
+
+- All eleven 1920 × 1080 PNGs exported in Chromium and visually inspected.
+- Each full menu fits its content area without vertical or horizontal clipping. Every modal header fills its interior width.
+- Farm/Pets tabs, bottom navigation, close button, Escape, preview action messages and the mobile screen selector were exercised. No JavaScript errors or failed HTTP requests occurred.
+- A 390 × 844 browser viewport has no horizontal page overflow. The art composition scales as a whole; this is not a production mobile Roblox layout.
+- The new 1536 × 1024 RGBA item atlas has 24 measured square crops; manifest JSON/JS and Luau coordinates agree. Transparent background pixels were verified (alpha zero); the icon interiors reach alpha 254.
+- All new PNG chunk CRCs and decoded pixel lengths pass; item atlas SHA-256 matches the manifest.
+- Fredoka is bundled locally with its OFL license; the preview needs no font service or network dependency.
+- The browser exporter is included at `tools/export_screens.cjs`.
+
+## Core pack checks passed
 
 - Five original PNG files decoded successfully at 1254 × 1254, 8-bit RGBA.
 - All five contain actual alpha-transparent pixels; alpha spans 0–255. No checkerboard background is baked into them.
@@ -25,7 +36,7 @@ python3 gui-assets/tools/validate_assets.py
 ## Not claimed
 
 - The managed cloud Chromium policy blocks `file://` navigation. Browser validation used the documented temporary local HTTP server. The preview uses only sibling scripts and image files and is designed to open directly in ordinary local browsers; direct-file execution was not verified in this managed browser.
-- No Roblox image upload or moderation was performed. The five image-ID entries remain intentionally empty.
+- No Roblox image upload or moderation was performed. The five core image-ID entries and the optional new item-atlas ID remain intentionally empty.
 - Roblox may resize uploads. Verify uploaded dimensions and set `Assets.UploadedSizes` before applying crops.
 - The Luau adapter has not been run in Roblox Studio. Studio is required to verify engine rendering, final asset IDs, owner/group permissions and the actual game's integration.
 - This repository contains screenshots, not the actual game's source. No live UI instances, server scripts, economy or multiplayer behavior were changed.

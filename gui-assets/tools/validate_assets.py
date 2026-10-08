@@ -60,3 +60,43 @@ print('PASS offline preview data and Luau sprite mappings')
 for name in ['README.md','CLAUDE_CODE_HANDOFF.md','preview.html','preview.js','roblox/StormGuiAssets.luau','roblox/ScreenRecipes.md','roblox/UPLOAD_CHECKLIST.md']:
     check((root/name).is_file(), f'missing {name}')
 print(f"PASS {len(manifest['sprites'])} sprite rectangles and all handoff files")
+
+content = json.loads((root / 'content-manifest.json').read_text())
+embedded = json.loads((root / 'content-manifest.js').read_text().split('window.STORM_CONTENT_MANIFEST = ', 1)[1].removesuffix(';\n'))
+check(content == embedded, 'item manifest synchronization')
+check(len(content['sprites']) == 24, 'expected 24 item illustrations')
+item_luau = (root / 'roblox/ScreenItemAssets.luau').read_text()
+for name, sprite in content['sprites'].items():
+    texture = content['textures'][sprite['texture']]
+    x, y, w, h = sprite['rect']
+    check(min(x,y) >= 0 and w == h and w > 0, f'{name}: invalid square crop')
+    check(x+w <= texture['width'] and y+h <= texture['height'], f'{name}: crop bounds')
+    check(f'["{name}"]' in item_luau and f'offset = Vector2.new({x}, {y}), size = Vector2.new({w}, {h})' in item_luau, f'{name}: item Luau mapping')
+screen_names = ['farm-loot','loot-index','pets','eggs','free-rewards','playtime-gifts','quests','rebirth','decor','storm-pass','hud']
+images = [(root / 'screens' / (name + '.png'), (1920,1080)) for name in screen_names]
+for texture in content['textures'].values():
+    path = root / texture['file']
+    check(hashlib.sha256(path.read_bytes()).hexdigest() == texture['sha256'], 'item atlas checksum')
+    images.append((path, (texture['width'], texture['height'])))
+images.append((root / 'screens/storm-background.png', None))
+for path, dimensions in images:
+    data = path.read_bytes()
+    check(data[:8] == b'\x89PNG\r\n\x1a\n', f'{path.name}: PNG signature')
+    pos, ended, compressed = 8, False, []
+    while pos < len(data):
+        length = struct.unpack('>I', data[pos:pos+4])[0]
+        kind, payload = data[pos+4:pos+8], data[pos+8:pos+8+length]
+        crc = struct.unpack('>I', data[pos+8+length:pos+12+length])[0]
+        check(zlib.crc32(kind+payload) & 0xffffffff == crc, f'{path.name}: PNG chunk integrity')
+        if kind == b'IHDR':
+            width, height, depth, color, _, _, interlace = struct.unpack('>IIBBBBB', payload)
+            check(dimensions is None or (width,height) == dimensions, f'{path.name}: dimensions')
+            check(depth == 8 and color in (2,6) and interlace == 0, f'{path.name}: PNG format')
+        if kind == b'IDAT': compressed.append(payload)
+        if kind == b'IEND': ended = True
+        pos += length+12
+    check(ended, f'{path.name}: missing end chunk')
+    check(len(zlib.decompress(b''.join(compressed))) == height*(width*(4 if color==6 else 3)+1), f'{path.name}: pixel data')
+for name in ['screens.html','screens.css','screens.js','FULL_SCREENS.md','fonts/Fredoka.ttf','fonts/OFL.txt','tools/export_screens.cjs']:
+    check((root/name).is_file(), f'missing {name}')
+print('PASS 24 item crops, item manifest/Luau synchronization, 11 full-HD PNGs, background and preview source files')
