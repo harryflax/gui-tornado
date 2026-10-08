@@ -1,16 +1,18 @@
 # Validation record
 
-Completed on 7 October 2026.
+Version 1.1 verified on 7 October 2026.
 
 ## Passed
 
 - Five original PNG files decoded successfully at 1254 × 1254, 8-bit RGBA.
 - All five contain actual alpha-transparent pixels; alpha spans 0–255. No checkerboard background is baked into them.
 - PNG signatures, chunk CRCs, decompressed byte lengths and SHA-256 hashes pass the standard-library validator.
-- All 41 named sprites are inside their source image bounds. Measured crop boundaries have alpha at or below 24/255; no opaque artwork crosses a crop edge.
+- All 41 named sprites are inside their source image bounds. Icon crop boundaries have alpha at or below 1/255. Headers deliberately crop the opaque colored inner face so their color reaches the full display width.
 - The panel's nine-slice center is inside its image bounds.
 - The offline JavaScript manifest matches `manifest.json`; all named coordinates match the Luau adapter.
 - Chromium loaded the local HTTP preview: all 41 gallery entries rendered, all four example layouts switched, and no JavaScript errors occurred.
+- Full-width header placement passed a browser geometry check: no more than 8 display pixels between the header edge and outer frame.
+- Header, button and rarity-card art was visually checked for smooth surfaces without studs. Farm/loot cow, paw prints, quest parchment, rebirth arrows and the tornado were compared to the original HUD.
 - The preview was inspected at 1440 × 1100 and 390 × 844. No horizontal page overflow at the phone width.
 - Git-tracked source screenshots and the original README remain unchanged.
 

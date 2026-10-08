@@ -1,5 +1,7 @@
 # Tornado-survival GUI image pack
 
+Version 1.1 uses smooth surfaces without studs, full-width colored headers, and simpler icons based on your original game (including the Farm cow and Quests parchment).
+
 Finished transparent PNG assets inspired by your **later viral-game reference upload**, mapped to the features in your existing tornado-survival GUI. No web project or replacement game is required.
 
 **Give Claude Code [CLAUDE_CODE_HANDOFF.md](CLAUDE_CODE_HANDOFF.md) and this entire folder.**
@@ -20,7 +22,7 @@ Finished transparent PNG assets inspired by your **later viral-game reference up
 
 ## Preview
 
-Open **`preview.html` directly in a browser**. It works offline, without installation. Keep `preview.js`, `manifest.js`, and `textures/` beside it. It shows My Base, Daily Rewards, Quests and HUD layout studies, plus every sprite and complete PNG sheet. Text, item names and values in these layout studies are illustrative overlays, not baked into the images or proposed changes to your economy.
+Open **`preview.html` directly in a browser**. It works offline, without installation. Keep `preview.js`, `manifest.js`, and `textures/` beside it. It shows My Farm, Daily Rewards, Quests and HUD layout studies, plus every sprite and complete PNG sheet. Text, item names and values in these layout studies are illustrative overlays, not baked into the images or proposed changes to your economy.
 
 Alternatively, from the repository root:
 
@@ -35,6 +37,8 @@ Open `preview.html` on that local server in your own browser. Stop the server wi
 1. Upload the **five full PNGs** to the actual experience owner/group. Follow [the upload checklist](roblox/UPLOAD_CHECKLIST.md).
 2. Supply their image content IDs in `StormGuiAssets.luau`. If Roblox resizes the files during upload, set the actual dimensions in `Assets.UploadedSizes`; the module scales crop coordinates automatically.
 3. Ask Claude Code to apply them to the existing UI following [the screen recipes](roblox/ScreenRecipes.md). All numbers, labels, rarity badges, item/pet renderings, progress fills and purchase logic remain native game objects.
+
+When replacing version 1.0, upload the four revised atlases and update their IDs, sprite coordinates and the helper module together. The panel-shell PNG is unchanged.
 
 Example after uploading and placing the ModuleScript in your project's shared UI location:
 

@@ -16,6 +16,10 @@ First read:
 
 My game loop is: build a base with friends in short rounds, survive the tornado, collect storm loot, return it to the base, earn cash per second. The screenshots uploaded in commit `8b81e70` show my existing screens. The screenshots uploaded later in `59b573c` show the viral-game visual direction I want. Preserve my screen names, features, and existing data. Use the brighter, squarer, bold-outline style of the later references.
 
+## Latest visual corrections (v1.1)
+
+Use the updated smooth textures: no stud patterns. Headers must span the full modal interior width; apply padding to title children rather than insetting the header itself. The adapter includes a native header background color to fill transparent edge pixels. Icons now follow the original simple game motifs: Farm/loot cow, parchment quest, brown paws, simple banknotes and a gray-blue tornado. Re-upload the four revised atlases and refresh their IDs and mappings together.
+
 ## Work to perform
 
 - Inspect my actual ScreenGui hierarchy and LocalScripts before editing. If this checkout only contains the screenshots and asset pack, do not invent game source or pretend integration is complete. Locate the actual Roblox project or request its location.

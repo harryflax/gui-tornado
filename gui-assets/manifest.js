@@ -2,7 +2,7 @@
 window.STORM_GUI_MANIFEST = {
   "schemaVersion": 1,
   "name": "Tornado Survival \u2014 Viral Simulator GUI Art",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "coordinates": "Native-image pixels. Rect is [x, y, width, height], origin top-left. Rectangles are measured from delivered art, NOT assumed equal-grid cells.",
   "textures": {
     "Panel": {
@@ -18,7 +18,7 @@ window.STORM_GUI_MANIFEST = {
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "sha256": "7028c798d62c3d6ad924dbeb70c503bb0369f89511318c84a95d93b254adaa9a",
+      "sha256": "ec7ffbf1f58149a2a49fa6359de85acf44c4e64e55f3e00c9ce35cf6a1ad0b1b",
       "uploadId": ""
     },
     "Controls": {
@@ -26,7 +26,7 @@ window.STORM_GUI_MANIFEST = {
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "sha256": "a28b5bc1e242a2767a6d8f6ae75e189aa5f1d5e79177e51ab86d2792966850fa",
+      "sha256": "3591f170b271f29c23cbc7431912bab8815941d215e97d00a352191624dfb3cc",
       "uploadId": ""
     },
     "Headers": {
@@ -34,7 +34,7 @@ window.STORM_GUI_MANIFEST = {
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "sha256": "b7a99be771b3a9a276d5c9c1511f2011b61f5b01d477352c113c7d5f220e01a2",
+      "sha256": "7abfdea43da9c120a4abb347ff3e5234cd92d7f7b3a541a34f7e2b87823fff42",
       "uploadId": ""
     },
     "Cards": {
@@ -42,7 +42,7 @@ window.STORM_GUI_MANIFEST = {
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
-      "sha256": "73dcd5b9ed23aed210986cadbba4b45f7c37437e8cb6e5af50baed655df945b8",
+      "sha256": "ba34194caf48dd25dc2247dd17ae2790bb893e70ec6dcb310c96fbb1a6b806d1",
       "uploadId": ""
     }
   },
@@ -91,13 +91,13 @@ window.STORM_GUI_MANIFEST = {
     "control.greenHover": {
       "texture": "Controls",
       "rect": [
-        633,
+        632,
         106,
-        601,
+        602,
         217
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.76959,
+      "aspectRatio": 2.77419,
       "contentInset": [
         56,
         24,
@@ -109,12 +109,12 @@ window.STORM_GUI_MANIFEST = {
       "texture": "Controls",
       "rect": [
         21,
-        370,
+        369,
         601,
-        217
+        218
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.76959,
+      "aspectRatio": 2.75688,
       "contentInset": [
         56,
         24,
@@ -125,13 +125,13 @@ window.STORM_GUI_MANIFEST = {
     "control.disabled": {
       "texture": "Controls",
       "rect": [
-        633,
-        370,
-        601,
-        217
+        632,
+        369,
+        602,
+        218
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.76959,
+      "aspectRatio": 2.76147,
       "contentInset": [
         56,
         24,
@@ -143,12 +143,12 @@ window.STORM_GUI_MANIFEST = {
       "texture": "Controls",
       "rect": [
         21,
-        649,
+        647,
         601,
-        217
+        218
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.76959,
+      "aspectRatio": 2.75688,
       "contentInset": [
         56,
         24,
@@ -159,13 +159,13 @@ window.STORM_GUI_MANIFEST = {
     "control.gold": {
       "texture": "Controls",
       "rect": [
-        633,
-        649,
-        601,
-        219
+        632,
+        647,
+        602,
+        218
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.74429,
+      "aspectRatio": 2.76147,
       "contentInset": [
         56,
         24,
@@ -177,12 +177,12 @@ window.STORM_GUI_MANIFEST = {
       "texture": "Controls",
       "rect": [
         21,
-        917,
+        915,
         601,
-        218
+        220
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.75688,
+      "aspectRatio": 2.73182,
       "contentInset": [
         56,
         24,
@@ -193,13 +193,13 @@ window.STORM_GUI_MANIFEST = {
     "control.pink": {
       "texture": "Controls",
       "rect": [
-        633,
-        917,
-        601,
-        218
+        632,
+        915,
+        602,
+        220
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.75688,
+      "aspectRatio": 2.73636,
       "contentInset": [
         56,
         24,
@@ -210,246 +210,160 @@ window.STORM_GUI_MANIFEST = {
     "header.base": {
       "texture": "Headers",
       "rect": [
-        10,
-        146,
-        613,
-        207
+        34,
+        174,
+        570,
+        155
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.96135,
+      "aspectRatio": 3.67742,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#ff8300",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.index": {
       "texture": "Headers",
       "rect": [
-        630,
-        147,
-        615,
-        206
+        650,
+        174,
+        570,
+        155
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.98544,
+      "aspectRatio": 3.67742,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#00bfff",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.pets": {
       "texture": "Headers",
       "rect": [
-        10,
-        400,
-        613,
-        207
+        34,
+        432,
+        570,
+        154
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.96135,
+      "aspectRatio": 3.7013,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#ff1ab4",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.rewards": {
       "texture": "Headers",
       "rect": [
-        631,
-        401,
-        615,
-        207
+        650,
+        432,
+        570,
+        154
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.97101,
+      "aspectRatio": 3.7013,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#67f200",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.gifts": {
       "texture": "Headers",
       "rect": [
-        10,
-        656,
-        613,
-        206
+        34,
+        689,
+        570,
+        155
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.97573,
+      "aspectRatio": 3.67742,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#ffc600",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.quests": {
       "texture": "Headers",
       "rect": [
-        630,
-        656,
-        616,
-        206
+        650,
+        689,
+        570,
+        155
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.99029,
+      "aspectRatio": 3.67742,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#006bff",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.rebirth": {
       "texture": "Headers",
       "rect": [
-        9,
-        910,
-        615,
-        208
+        34,
+        947,
+        570,
+        154
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.95673,
+      "aspectRatio": 3.7013,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#8c16ff",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "header.warning": {
       "texture": "Headers",
       "rect": [
-        630,
-        910,
-        615,
-        208
+        650,
+        947,
+        571,
+        154
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 2.95673,
+      "aspectRatio": 3.70779,
       "contentInset": [
-        30,
-        20,
-        30,
-        46
-      ]
+        16,
+        8,
+        16,
+        8
+      ],
+      "fillColor": "#ff2528",
+      "note": "Crop uses the colored inner face, excluding the former black side caps. Apply matching fillColor behind this image and size the header edge to edge."
     },
     "card.common": {
       "texture": "Cards",
       "rect": [
-        15,
+        14,
         44,
-        301,
-        564
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.53369,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.uncommon": {
-      "texture": "Cards",
-      "rect": [
-        324,
-        44,
-        299,
-        564
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.53014,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.rare": {
-      "texture": "Cards",
-      "rect": [
-        631,
-        44,
-        301,
-        564
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.53369,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.epic": {
-      "texture": "Cards",
-      "rect": [
-        939,
-        44,
-        301,
-        564
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.53369,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.legendary": {
-      "texture": "Cards",
-      "rect": [
-        15,
-        645,
-        301,
-        565
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.53274,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.mythic": {
-      "texture": "Cards",
-      "rect": [
-        324,
-        645,
-        299,
-        565
-      ],
-      "scaleType": "Stretch",
-      "aspectRatio": 0.5292,
-      "contentInset": [
-        24,
-        24,
-        24,
-        24
-      ]
-    },
-    "card.locked": {
-      "texture": "Cards",
-      "rect": [
-        630,
-        645,
         303,
         565
       ],
@@ -462,16 +376,118 @@ window.STORM_GUI_MANIFEST = {
         24
       ]
     },
-    "card.selected": {
+    "card.uncommon": {
       "texture": "Cards",
       "rect": [
-        940,
-        645,
-        299,
+        323,
+        44,
+        301,
         565
       ],
       "scaleType": "Stretch",
-      "aspectRatio": 0.5292,
+      "aspectRatio": 0.53274,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.rare": {
+      "texture": "Cards",
+      "rect": [
+        630,
+        44,
+        304,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53805,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.epic": {
+      "texture": "Cards",
+      "rect": [
+        938,
+        44,
+        303,
+        565
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53628,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.legendary": {
+      "texture": "Cards",
+      "rect": [
+        14,
+        645,
+        303,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53723,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.mythic": {
+      "texture": "Cards",
+      "rect": [
+        323,
+        645,
+        301,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53369,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.locked": {
+      "texture": "Cards",
+      "rect": [
+        630,
+        645,
+        304,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53901,
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.selected": {
+      "texture": "Cards",
+      "rect": [
+        939,
+        645,
+        302,
+        564
+      ],
+      "scaleType": "Stretch",
+      "aspectRatio": 0.53546,
       "contentInset": [
         24,
         24,
@@ -482,10 +498,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.freeRewards": {
       "texture": "Icons",
       "rect": [
-        59,
-        75,
-        240,
-        240
+        34,
+        38,
+        280,
+        280
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -499,10 +515,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.base": {
       "texture": "Icons",
       "rect": [
-        366,
-        78,
-        240,
-        240
+        331,
+        27,
+        312,
+        312
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -516,10 +532,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.pets": {
       "texture": "Icons",
       "rect": [
-        662,
-        84,
-        240,
-        240
+        674,
+        55,
+        273,
+        273
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -533,10 +549,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.playtime": {
       "texture": "Icons",
       "rect": [
-        971,
-        83,
-        240,
-        240
+        949,
+        47,
+        273,
+        273
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -550,10 +566,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.quests": {
       "texture": "Icons",
       "rect": [
-        60,
-        382,
-        240,
-        240
+        35,
+        347,
+        276,
+        276
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -567,10 +583,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.rebirth": {
       "texture": "Icons",
       "rect": [
-        363,
-        379,
-        240,
-        240
+        354,
+        350,
+        260,
+        260
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -584,10 +600,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.pass": {
       "texture": "Icons",
       "rect": [
-        656,
-        381,
-        240,
-        240
+        657,
+        353,
+        270,
+        270
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -601,10 +617,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.settings": {
       "texture": "Icons",
       "rect": [
-        965,
-        379,
-        240,
-        240
+        948,
+        350,
+        274,
+        274
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -618,10 +634,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.cash": {
       "texture": "Icons",
       "rect": [
-        57,
-        677,
-        240,
-        240
+        33,
+        626,
+        303,
+        303
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -635,10 +651,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.strength": {
       "texture": "Icons",
       "rect": [
-        365,
-        669,
-        240,
-        240
+        352,
+        624,
+        274,
+        274
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -652,10 +668,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.tornado": {
       "texture": "Icons",
       "rect": [
-        663,
-        668,
-        240,
-        240
+        649,
+        632,
+        286,
+        286
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -669,10 +685,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.luck": {
       "texture": "Icons",
       "rect": [
-        971,
-        677,
-        240,
-        240
+        953,
+        644,
+        274,
+        274
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -686,10 +702,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.build": {
       "texture": "Icons",
       "rect": [
-        63,
-        958,
-        240,
-        240
+        33,
+        926,
+        279,
+        279
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -703,10 +719,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.salvage": {
       "texture": "Icons",
       "rect": [
-        371,
-        960,
-        240,
-        240
+        328,
+        902,
+        323,
+        323
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -720,10 +736,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.shield": {
       "texture": "Icons",
       "rect": [
-        662,
-        959,
-        240,
-        240
+        658,
+        923,
+        283,
+        283
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,
@@ -737,10 +753,10 @@ window.STORM_GUI_MANIFEST = {
     "icon.close": {
       "texture": "Icons",
       "rect": [
-        969,
-        961,
-        240,
-        240
+        957,
+        938,
+        263,
+        263
       ],
       "scaleType": "Fit",
       "aspectRatio": 1,

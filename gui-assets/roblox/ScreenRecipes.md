@@ -4,6 +4,7 @@ Use existing names and game data. The screenshot names below identify current UI
 
 ## Shared visual language
 
+- Smooth surfaces only: no studs, rivets, repeating dots or embossed patterns.
 - Near-black outlines, compact corner radii, vivid flat color, one top highlight and a darker lower lip.
 - White primary text with a black stroke; gold/yellow section headings where already used; vivid green income values.
 - `Enum.Font.FredokaOne` is a suitable starting point. Confirm glyph coverage for the game's languages; retain its current compatible font when needed. Use bounded text sizing rather than scaling every label arbitrarily.
@@ -13,6 +14,10 @@ Use existing names and game data. The screenshot names below identify current UI
 - Rarity: `card.common`, `.uncommon`, `.rare`, `.epic`, `.legendary`, `.mythic`. Keep an explicit rarity TextLabel. `card.locked` is for undiscovered objects; overlay the game's own silhouette and `???` label. `card.selected` is an optional selection treatment; it must not conceal rarity information.
 - Icons use `ScaleType.Fit`, preserving their aspect ratio. Headers/buttons/cards use the atlas crop and Stretch at their documented aspect ratio; moderate resizing is fine. For radically different shapes, build an equivalent native Frame + UIStroke + UIGradient from the color tokens instead of distorting the atlas.
 - Do not apply SliceCenter to an atlas sprite. Only the separate panel texture has a supported nine-slice configuration.
+
+### Full-width header placement
+
+The header ImageLabel fills the panel interior width, with no horizontal content padding. Put padding on its title/icon children, not on the header container. `Assets.Apply` fills header backgrounds using `fillColor` so transparent edge pixels cannot reveal a dark inset gap. Keep the close button within that full-width header. The title is MY FARM and the Farm/loot navigation uses the original cow motif.
 
 ## HUD — screenshot 134312
 
@@ -26,7 +31,7 @@ Bottom: Free → `icon.freeRewards`; Farm → `icon.base`; Pets → `icon.pets`;
 
 ## My Farm / base — 134221, 134230, 134256, 134300
 
-- Orange `header.base`, home icon, separate close button.
+- Orange `header.base`, cow icon, separate close button.
 - Preserve Loot / Index / Rebirth / Decor tabs and active state. Selected tab can use a colored `control.*`, inactive tab the native dark treatment.
 - Above grid: live owned/capacity count left, cash/sec right.
 - Loot cards: rarity backdrop, existing item thumbnail or ViewportFrame, name, income, and separate orange sell button. Preserve confirmation behavior and authoritative sell value.
