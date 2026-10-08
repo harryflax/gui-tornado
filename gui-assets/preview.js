@@ -3,10 +3,10 @@
   const manifest = window.STORM_GUI_MANIFEST;
   if (!manifest) { document.getElementById('error').textContent = 'Manifest is missing. Keep manifest.js beside preview.html.'; return; }
   function el(tag, className = '', text) { const node = document.createElement(tag); node.className = className; if (text !== undefined) node.textContent = text; return node; }
-  function sprite(name, className = '') {
-    const spec = manifest.sprites[name];
+  function sprite(name, className = '', source = manifest) {
+    const spec = source.sprites[name];
     if (!spec) throw new Error(`Missing sprite: ${name}`);
-    const texture = manifest.textures[spec.texture];
+    const texture = source.textures[spec.texture];
     const [x, y, w, h] = spec.rect;
     const node = el('span', `sprite ${className}`);
     node.setAttribute('aria-hidden', 'true');
@@ -40,6 +40,14 @@
       windowNode.append(header('QUESTS','quests','quests'));const rows=el('div','quest-rows');[['build','Help build your shelter','Keep the existing objective and reward values.'],['tornado','Survive the storm','Live progress comes from the game.'],['salvage','Bring the loot home','Original claim logic stays unchanged.']].forEach(([icon,title,desc],i)=>{const row=el('div','quest');const content=el('div','quest-content');content.append(el('strong','game-text',title),el('p','',desc));const track=el('div','quest-track');const fill=el('span');fill.style.width=[65,100,25][i]+'%';track.append(fill);content.append(track);row.append(sprite('icon.'+icon),content,face(i===1?'CLAIM':'IN PROGRESS',i===1?'green':'disabled'));rows.append(row);});windowNode.append(rows);
     }
     stage.append(windowNode);
+  }
+  for(const [name,spec] of Object.entries(window.STORM_SURFACE_MANIFEST.sprites)) {
+    const tile=el('div','asset-tile'), art=el('div','asset-art checker');
+    const face=sprite(name,'',window.STORM_SURFACE_MANIFEST);
+    const ratio=spec.rect[2]/spec.rect[3], height=Math.min(120,210/ratio);
+    face.style.width=height*ratio+'px';face.style.height=height+'px';art.append(face);
+    const meta=el('div','asset-meta');meta.append(el('strong','',name),el('span','',`${spec.rect[2]} × ${spec.rect[3]} · v2 nine-slice`));
+    tile.append(art,meta);document.getElementById('v2-surfaces').append(tile);
   }
   for(const [name,spec] of Object.entries(manifest.sprites)) {
     const group=name.startsWith('icon.')?'icons':(name.startsWith('card.')||name.startsWith('panel.'))?'cards':'controls';

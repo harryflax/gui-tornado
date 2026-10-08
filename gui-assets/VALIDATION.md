@@ -1,6 +1,15 @@
 # Validation record
 
-Version 1.2 full-screen pack verified on 8 October 2026. Core atlas checks from version 1.1 were also rerun.
+Version 2 redesigned pack verified on 8 October 2026 (Australia/Perth). Previous asset integrity checks were also rerun.
+
+## Version 2 checks passed
+
+- All eleven screen text contents exactly match the v1.2 snapshot captured before redesign: no changed prices, names, stats, reward schedules or timers.
+- The redesigned full screens were exported and inspected; all menus fit without scrolling/clipping at 1920 × 1080 and colored headers fill their modal width.
+- New 1536 × 1408 RGBA surface atlas contains 23 blank reusable pieces. Crop bounds, nine-slice centers, PNG integrity, SHA-256, JSON/JS synchronization and Luau mappings pass.
+- New surfaces come directly from the shared CSS used by the full-screen preview. Original icon/item artwork and game sample information are retained.
+- Browser checks confirmed hover brightening, press movement and disabled rebirth state. The current asset gallery renders all 23 new surfaces and 16 retained navigation icons; no JavaScript/network errors or horizontal overflow at 390px.
+- The new atlas has actual RGBA alpha ranging from 0 to 255, with a fully transparent corner.
 
 ## Full-screen checks passed
 
@@ -36,7 +45,7 @@ python3 gui-assets/tools/validate_assets.py
 ## Not claimed
 
 - The managed cloud Chromium policy blocks `file://` navigation. Browser validation used the documented temporary local HTTP server. The preview uses only sibling scripts and image files and is designed to open directly in ordinary local browsers; direct-file execution was not verified in this managed browser.
-- No Roblox image upload or moderation was performed. The five core image-ID entries and the optional new item-atlas ID remain intentionally empty.
+- No Roblox image upload or moderation was performed. Core, item and polished-surface image IDs remain intentionally empty.
 - Roblox may resize uploads. Verify uploaded dimensions and set `Assets.UploadedSizes` before applying crops.
 - The Luau adapter has not been run in Roblox Studio. Studio is required to verify engine rendering, final asset IDs, owner/group permissions and the actual game's integration.
 - This repository contains screenshots, not the actual game's source. No live UI instances, server scripts, economy or multiplayer behavior were changed.

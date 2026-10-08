@@ -1,5 +1,7 @@
 # Screen recipes
 
+**Version 2 appearance:** use [POLISHED_DESIGN.md](../POLISHED_DESIGN.md), the current full-screen PNGs, and `StormGuiSurfaces.luau` for button/card/header/panel visuals. These recipes still describe the original feature bindings; older surface-name examples below are compatibility references.
+
 Use existing names and game data. The screenshot names below identify current UI, not a requirement to rebuild the instance tree.
 
 ## Shared visual language

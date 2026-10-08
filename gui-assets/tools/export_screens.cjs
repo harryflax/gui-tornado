@@ -3,7 +3,10 @@
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE_PATH || 'playwright');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
 const root = path.resolve(__dirname, '..');
+// Captured from v1.2 before the redesign, independently of current renderers.
+const originalContent = JSON.parse(fs.readFileSync(path.join(__dirname,'screen-content.json'),'utf8'));
 (async () => {
   const browser = await chromium.launch({ headless: true,
     ...(process.env.CHROMIUM_PATH ? {executablePath: process.env.CHROMIUM_PATH} : {}),
@@ -22,6 +25,7 @@ const root = path.resolve(__dirname, '..');
     const screens = await page.evaluate(() => TORNADO_SCREENS.list);
     for (const [id] of screens) {
       await page.evaluate(id => TORNADO_SCREENS.navigate(id), id);
+      assert.equal(await page.locator('#game-stage').textContent(),originalContent[id],`${id}: menu information changed`);
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       const geometry = await page.evaluate(() => {
         const body=document.querySelector('.menu-body'), header=document.querySelector('.modal-header'), modal=document.querySelector('.game-modal');
@@ -31,7 +35,7 @@ const root = path.resolve(__dirname, '..');
       assert(!geometry || geometry.horizontal === 0, `${id}: horizontal clipping`);
       assert(!geometry || geometry.headerGap < 1, `${id}: header does not fill modal`);
       await page.screenshot({path:path.join(root,'screens',id+'.png')});
-      console.log(`PASS ${id}: 1920×1080 export, full-width header, no menu clipping`);
+      console.log(`PASS ${id}: unchanged information, 1920×1080 export, full-width header, no menu clipping`);
     }
     await page.evaluate(() => TORNADO_SCREENS.navigate('farm-loot'));
     await page.getByRole('button',{name:'INDEX',exact:true}).click();

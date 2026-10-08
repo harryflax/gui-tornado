@@ -6,10 +6,10 @@ Copy the following task into Claude Code with this repository and the actual Rob
 
 Reskin my EXISTING Roblox tornado-survival game using `gui-assets/`. This is an image asset integration task, not a new website or a replacement game.
 
-First read:
+First read `gui-assets/POLISHED_DESIGN.md` for the current v2 appearance and new surface atlas, then:
 
 1. `gui-assets/FULL_SCREENS.md` and all eleven `gui-assets/screens/` menu PNGs
-2. `gui-assets/screens.html`, `screens.css`, `screens.js` for layered layout geometry
+2. `gui-assets/screens.html`, `screens.css`, `screens-polish.css`, `screens.js` for layered layout geometry
 3. `gui-assets/content-manifest.json` and `roblox/ScreenItemAssets.luau`
 4. `gui-assets/README.md`
 5. `gui-assets/reference/REFERENCE_MAP.md`
@@ -17,29 +17,31 @@ First read:
 7. `gui-assets/roblox/StormGuiAssets.luau`
 8. `gui-assets/roblox/ScreenRecipes.md`
 
-My game loop is: build a base with friends in short rounds, survive the tornado, collect storm loot, return it to the base, earn cash per second. The screenshots uploaded in commit `8b81e70` show my existing screens. The screenshots uploaded later in `59b573c` show the viral-game visual direction I want. Preserve my screen names, features, and existing data. Use the brighter, squarer, bold-outline style of the later references.
+My game loop is: build a base with friends in short rounds, survive the tornado, collect storm loot, return it to the base, earn cash per second. The screenshots uploaded in commit `8b81e70` show my existing screens. The screenshots uploaded later in `59b573c` show the viral-game visual direction I want. Preserve my screen names, features, and existing data. Use the current version 2 designs: clean beveled buttons, dark blue panels, subtle rarity edges, larger item artwork, and restrained text shadows. The user authorized departing from the original visual design while keeping the same information.
 
-## Full-screen designs (v1.2)
+## Full-screen designs (v2)
 
 Use the eleven complete designs as the primary visual targets: Farm Loot, Index, Pets, Eggs, Free Rewards, Playtime Gifts, Quests, Rebirth, Decor, Storm Pass and HUD. Preserve their original menu structure and familiar icons. The HTML/CSS is editable reference geometry; rebuild the appearance using the existing Roblox UI and data bindings. Do not flatten entire screens into ImageLabels.
 
-The sixth texture, `menu-items.png`, contains 24 optional item/pet illustrations with measured crops and a separate adapter. Set its real uploaded image ID if using it. Retain existing game thumbnails when needed to show accurate mutations or models. Read the sample-data exceptions in FULL_SCREENS.md; visible preview values are not gameplay configuration.
+The item texture, `menu-items.png`, contains 24 optional item/pet illustrations with measured crops and a separate adapter. Set its real uploaded image ID if using it. Retain existing game thumbnails when needed to show accurate mutations or models. Read the sample-data exceptions in FULL_SCREENS.md; visible preview values are not gameplay configuration.
 
-## Retained visual corrections (v1.1)
+## Current appearance assets
 
-Use the updated smooth textures: no stud patterns. Headers must span the full modal interior width; apply padding to title children rather than insetting the header itself. The adapter includes a native header background color to fill transparent edge pixels. Icons now follow the original simple game motifs: Farm/loot cow, parchment quest, brown paws, simple banknotes and a gray-blue tornado. Re-upload the four revised atlases and refresh their IDs and mappings together.
+Use `textures/polished-surfaces.png`, `surface-manifest.json` and `roblox/StormGuiSurfaces.luau` for buttons, cards, headers, tabs and panels. Retain the original navigation icon and item atlases. The new look needs three uploaded atlases, not the old four glossy surface sheets. PNGs contain blank faces; keep all labels and data separate.
+
+Headers still span the full modal interior width. No studs or repeated square patterns. Read the new manifest for transparent shadow padding and header crop handling. The screen renderer uses the same native appearance styles that generated the blank atlas.
 
 ## Work to perform
 
 - Inspect my actual ScreenGui hierarchy and LocalScripts before editing. If this checkout only contains the screenshots and asset pack, do not invent game source or pretend integration is complete. Locate the actual Roblox project or request its location.
 - Use the finished PNG textures in `gui-assets/textures/`. They are sprite sheets plus one standalone panel frame. Do not use the screenshots as in-game textures.
 - Read the asset manifest for exact image dimensions, names, pixel rectangles, safe-area notes, and scale behavior. Atlas rectangles are zero-based pixels, not normalized UV coordinates. Upload each ENTIRE PNG once. Do not individually upload crops.
-- Roblox needs uploaded image asset IDs. Follow `roblox/UPLOAD_CHECKLIST.md`, then fill the five ID entries at the top of `StormGuiAssets.luau`. Do not fabricate `rbxassetid://` numbers or reuse another developer's assets. A local PNG filename cannot be an ImageLabel.Image at runtime.
+- Roblox needs uploaded image asset IDs. Follow `roblox/UPLOAD_CHECKLIST.md`, then set the new `StormGuiSurfaces.ImageId`, the retained `StormGuiAssets.AssetIds.Icons`, and optional `ScreenItemAssets.ImageId`. Do not fabricate `rbxassetid://` numbers or reuse another developer's assets. A local PNG filename cannot be an ImageLabel.Image at runtime.
 - Place the module in ReplicatedStorage or the project's existing shared UI location. The module only applies image properties; it must not create RemoteEvents or replace game services.
 - Apply these images to existing ImageLabels/ImageButtons, retaining their original parent, layout order, anchors, input handlers, and authoritative data bindings. If replacing a Frame/TextButton is necessary, migrate its children and existing bindings deliberately. Do not drop event handlers while replacing an Instance.
-- Put all text in native TextLabels/TextButtons ABOVE the artwork: names, prices, cash, cash/sec, countdowns, capacity, rarity, pet bonuses, ownership, build progress, pass XP and purchase labels. Use a heavy rounded Roblox font such as FredokaOne, with a near-black UIStroke. Preserve localization. Do not bake current values into images.
+- Put all text in native TextLabels/TextButtons ABOVE the artwork: names, prices, cash, cash/sec, countdowns, capacity, rarity, pet bonuses, ownership, build progress, pass XP and purchase labels. Use a heavy rounded Roblox font such as FredokaOne, with medium/bold weight and restrained shadows; avoid the old heavy black outline. Bright button labels use the dark colors listed in POLISHED_DESIGN.md. Preserve localization. Do not bake current values into images.
 - Use ViewportFrames or the existing owned item/pet thumbnails over blank rarity cards. Keep sell/equip/claim controls separate and interactive. The art is a background, not a whole clickable menu.
-- Follow `ScreenRecipes.md` to map the art to the existing HUD and every shown screen.
+- Use the v2 screenshots and POLISHED_DESIGN.md for current appearance, and `ScreenRecipes.md` to map the art to the existing HUD and every shown screen.
 - Preserve all RemoteEvents, server-side purchase validation, MarketplaceService flows, timers, progress persistence, monetization product IDs, pet stats, item values and co-op behavior. Do not add fake multiplayer, fake purchases, or placeholder economy logic.
 - Make a reversible visual change. Prefer a feature flag or a skin module that leaves the old visuals available until reviewed.
 

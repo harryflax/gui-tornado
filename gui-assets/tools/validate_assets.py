@@ -74,6 +74,22 @@ for name, sprite in content['sprites'].items():
     check(f'["{name}"]' in item_luau and f'offset = Vector2.new({x}, {y}), size = Vector2.new({w}, {h})' in item_luau, f'{name}: item Luau mapping')
 screen_names = ['farm-loot','loot-index','pets','eggs','free-rewards','playtime-gifts','quests','rebirth','decor','storm-pass','hud']
 images = [(root / 'screens' / (name + '.png'), (1920,1080)) for name in screen_names]
+surfaces = json.loads((root / 'surface-manifest.json').read_text())
+embedded = json.loads((root / 'surface-manifest.js').read_text().split('window.STORM_SURFACE_MANIFEST = ', 1)[1].removesuffix(';\n'))
+check(surfaces == embedded, 'surface manifest synchronization')
+check(len(surfaces['sprites']) == 23, 'expected 23 polished surfaces')
+surface_luau = (root / 'roblox/StormGuiSurfaces.luau').read_text()
+for name, sprite in surfaces['sprites'].items():
+    texture = surfaces['textures'][sprite['texture']]
+    x, y, w, h = sprite['rect']
+    check(min(x,y) >= 0 and min(w,h) > 0 and x+w <= texture['width'] and y+h <= texture['height'], f'{name}: surface crop bounds')
+    l,t,r,b = sprite['sliceCenter']
+    check(0 < l < r < w and 0 < t < b < h, f'{name}: surface slice bounds')
+    check(f'["{name}"]' in surface_luau and f'offset = Vector2.new({x}, {y}), size = Vector2.new({w}, {h}), slice = Rect.new({l}, {t}, {r}, {b})' in surface_luau, f'{name}: surface Luau mapping')
+for texture in surfaces['textures'].values():
+    path = root / texture['file']
+    check(hashlib.sha256(path.read_bytes()).hexdigest() == texture['sha256'], 'surface atlas checksum')
+    images.append((path,(texture['width'],texture['height'])))
 for texture in content['textures'].values():
     path = root / texture['file']
     check(hashlib.sha256(path.read_bytes()).hexdigest() == texture['sha256'], 'item atlas checksum')
@@ -97,6 +113,7 @@ for path, dimensions in images:
         pos += length+12
     check(ended, f'{path.name}: missing end chunk')
     check(len(zlib.decompress(b''.join(compressed))) == height*(width*(4 if color==6 else 3)+1), f'{path.name}: pixel data')
-for name in ['screens.html','screens.css','screens.js','FULL_SCREENS.md','fonts/Fredoka.ttf','fonts/OFL.txt','tools/export_screens.cjs']:
+for name in ['screens.html','screens.css','screens-polish.css','screens.js','surface-kit.html','surface-kit.js','POLISHED_DESIGN.md','FULL_SCREENS.md','fonts/Fredoka.ttf','fonts/OFL.txt','tools/export_screens.cjs','tools/export_surfaces.cjs','tools/screen-content.json']:
     check((root/name).is_file(), f'missing {name}')
 print('PASS 24 item crops, item manifest/Luau synchronization, 11 full-HD PNGs, background and preview source files')
+print('PASS 23 polished surfaces: bounds, slice centers, PNG integrity, hash and JSON/JS/Luau synchronization')

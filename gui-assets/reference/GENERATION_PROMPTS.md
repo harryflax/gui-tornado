@@ -1,3 +1,9 @@
+# Version 2 surface source
+
+Current buttons, cards, panels, tabs and headers are authored in `screens-polish.css` and exported from `surface-kit.html` using Chromium. They are blank reusable UI surfaces; text and icons remain separate. The eleven full-screen PNGs are browser exports of the layered layouts. Regenerate with the two export scripts described in [POLISHED_DESIGN.md](../POLISHED_DESIGN.md).
+
+The earlier image-generation prompts below document the retained icon and item artwork and legacy v1 surfaces. Do not regenerate old glossy surface art when targeting v2.
+
 # Version 1.1 art direction
 
 The current pack supersedes the original studded version. Do not bring back stud textures or the elaborate house/crystal-crate icons.

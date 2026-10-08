@@ -1,6 +1,6 @@
 # Full original-game menu templates
 
-Eleven finished **1920 × 1080 PNGs**, based on your original game screenshots, with bright full-width headers, smooth surfaces and familiar game icons. Click any image to view it directly on GitHub.
+Eleven finished **1920 × 1080 PNGs**, based on your original game screenshots, now redesigned in version 2 with cleaner buttons, blue panels, subtle rarity accents and familiar game icons. All menu information is unchanged. See [POLISHED_DESIGN.md](POLISHED_DESIGN.md) for the current reusable surface assets. Click any image to view it directly on GitHub.
 
 | Menu | Finished image | Original screenshot |
 | --- | --- | --- |
@@ -32,8 +32,9 @@ GitHub's HTML file page displays source code; download the repository to run the
 Start with [CLAUDE_CODE_HANDOFF.md](CLAUDE_CODE_HANDOFF.md). Include this folder and your actual Roblox project.
 
 - `screens/*.png`: complete visual references with sample text and game context.
-- `screens.html`, `screens.css`, `screens.js`: editable layout source. Design canvas: 1600 × 900, exported at 1.2×. Modal: position (210, 80), size 1180 × 706; header fills its interior width.
-- `textures/`: reusable transparent image layers. The five core atlases retain their existing `manifest.json` and `StormGuiAssets.luau` mappings.
+- `screens.html`, `screens.css`, `screens-polish.css`, `screens.js`: editable layout source. Design canvas: 1600 × 900, exported at 1.2×. Modal: position (210, 80), size 1180 × 706; header fills its interior width.
+- `textures/polished-surfaces.png`: 23 new blank surfaces, with `surface-manifest.json` and `roblox/StormGuiSurfaces.luau`.
+- `textures/`: reusable transparent image layers. Core icon and item mappings are unchanged; older v1 surfaces remain for compatibility.
 - `textures/menu-items.png`: **24 additional item/pet illustrations**, 1536 × 1024 RGBA. Exact square crop rectangles are in `content-manifest.json`; `content-manifest.js` supports offline preview.
 - `roblox/ScreenItemAssets.luau`: optional item atlas adapter. Upload the whole atlas, set `ImageId`, and adjust `UploadedSize` if Roblox resizes it. Prefer existing thumbnails/ViewportFrames when they provide the correct item or mutation appearance.
 - `fonts/Fredoka.ttf` and `fonts/OFL.txt`: local preview font and license. Use Roblox's FredokaOne for live native text.
@@ -55,7 +56,8 @@ Viewing requires no dependencies. Optional automated export needs Node.js, Playw
 Start the Python server documented in [README.md](README.md), then run from the repository root:
 
 ```bash
+node gui-assets/tools/export_surfaces.cjs
 node gui-assets/tools/export_screens.cjs
 ```
 
-The exporter saves all eleven PNGs and checks menu clipping, full-width headers, navigation, close/Escape, preview-only actions, mobile selector and JavaScript/network errors. `GUI_PREVIEW_ORIGIN` overrides the default local server origin. Do not commit tooling `node_modules`.
+The exporters regenerate the blank atlas and all eleven PNGs, preserve the original screen text, and check menu clipping, full-width headers, navigation, close/Escape, preview-only actions, mobile selector and JavaScript/network errors. `GUI_PREVIEW_ORIGIN` overrides the default local server origin. Do not commit tooling `node_modules`.

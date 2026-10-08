@@ -1,5 +1,7 @@
 # Import into Roblox
 
+**Version 2:** upload `polished-surfaces.png`, `navigation-icons.png`, and optional `menu-items.png`. Set `StormGuiSurfaces.ImageId`, `StormGuiAssets.AssetIds.Icons`, and `ScreenItemAssets.ImageId`. Their native sizes are 1536 × 1408, 1254 × 1254, and 1536 × 1024. Follow [POLISHED_DESIGN.md](../POLISHED_DESIGN.md) for current surface names and padding. The older five-file flow below is retained only for v1 compatibility.
+
 1. Open the intended published experience in Roblox Studio under the user/group that owns it.
 2. Open Asset Manager (or the current Creator Dashboard image upload flow) and import the five core PNG files from `../textures/` (`panel-shell`, `navigation-icons`, `controls-atlas`, `headers-atlas`, `rarity-cards`) as an image. Keep the entire atlas intact. Do not upload reference screenshots or the HTML preview.
 3. Record the usable image content asset ID for each texture. An uploaded decal/container ID can differ from its image content ID; use the ID that resolves as an ImageLabel.Image. Verify with a temporary ImageLabel in Studio instead of assuming IDs are interchangeable.

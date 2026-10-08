@@ -1,0 +1,525 @@
+{
+  "version": "2.0",
+  "notes": "Blank appearance layers only. Labels, icons and game data remain separate. Transparent shadow padding is included except on full-width header crops.",
+  "textures": {
+    "polishedSurfaces": {
+      "file": "textures/polished-surfaces.png",
+      "width": 1536,
+      "height": 1408,
+      "sha256": "a0a3eda4b169b3132cb471ef2edd8b5972aae59164474159746b0d619ecfeff0"
+    }
+  },
+  "sprites": {
+    "button.green": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        32,
+        32,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.gold": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        408,
+        32,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.orange": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        784,
+        32,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.pink": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        1160,
+        32,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.blue": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        32,
+        152,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.disabled": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        408,
+        152,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.greenHover": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        784,
+        152,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "button.greenPressed": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        1160,
+        152,
+        336,
+        88
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        304,
+        56
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.common": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        32,
+        284,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.uncommon": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        320,
+        284,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.rare": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        608,
+        284,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.epic": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        32,
+        576,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.legendary": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        320,
+        576,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "card.mythic": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        608,
+        576,
+        232,
+        260
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        200,
+        228
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "header.base": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        916,
+        296,
+        576,
+        64
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        16,
+        16,
+        560,
+        48
+      ],
+      "contentInset": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "fillColor": "#da7524"
+    },
+    "header.pets": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        916,
+        408,
+        576,
+        64
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        16,
+        16,
+        560,
+        48
+      ],
+      "contentInset": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "fillColor": "#bc438a"
+    },
+    "header.gifts": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        916,
+        520,
+        576,
+        64
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        16,
+        16,
+        560,
+        48
+      ],
+      "contentInset": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "fillColor": "#c38e24"
+    },
+    "header.quests": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        916,
+        632,
+        576,
+        64
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        16,
+        16,
+        560,
+        48
+      ],
+      "contentInset": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "fillColor": "#2277c2"
+    },
+    "header.pass": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        916,
+        744,
+        576,
+        64
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        16,
+        16,
+        560,
+        48
+      ],
+      "contentInset": [
+        16,
+        12,
+        16,
+        12
+      ],
+      "fillColor": "#7950d5"
+    },
+    "panel.shell": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        32,
+        892,
+        700,
+        480
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        668,
+        448
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "tab.normal": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        792,
+        910,
+        320,
+        72
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        288,
+        40
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "tab.selected": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        792,
+        1018,
+        320,
+        72
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        288,
+        40
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "hud.stat": {
+      "texture": "polishedSurfaces",
+      "rect": [
+        792,
+        1130,
+        320,
+        112
+      ],
+      "scaleType": "Slice",
+      "sliceCenter": [
+        32,
+        32,
+        288,
+        80
+      ],
+      "contentInset": [
+        24,
+        24,
+        24,
+        24
+      ]
+    }
+  }
+}
