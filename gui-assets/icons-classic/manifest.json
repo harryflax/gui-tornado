@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "styleReference": "Original navigation atlas from commit 02d95a8",
+  "format": "Standalone transparent PNGs; upload each complete image individually",
+  "icons": {
+    "shop": {
+      "file": "shop-cart.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "71421afac97447f29f666d89867aec4a10449636aa7619c0f364e4efd774f319"
+    },
+    "menu": {
+      "file": "menu-backpack.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "55de5d3ca09ab0ba415c4d545e8160288fbaf850412ba42965cd8d68da2f3331"
+    },
+    "farm": {
+      "file": "farm-cow.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "9b333a187a9ff7cac602e1bf9ddb62d596b27013284c14660d19d0aac2628b03"
+    },
+    "myFarm": {
+      "file": "my-farm-house.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "ace0c61c9018c7d522b4804f2d0ef2b457240164179bd58bc9bce41bf8e40f4e"
+    },
+    "lobby": {
+      "file": "lobby-house.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "sha256": "226bfeed18058589ce9d237113e25def51a79f21f1deab391495b8e3c61c6f7e"
+    },
+    "badges": {
+      "file": "badges-medal.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "scaleType": "Fit",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "sha256": "df243e57d364b6afda68b97df503ae8240dcb8877f4a7c4cdf05b3e50a55359d"
+    }
+  }
+}

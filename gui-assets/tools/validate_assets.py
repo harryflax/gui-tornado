@@ -74,6 +74,17 @@ for name, sprite in content['sprites'].items():
     check(f'["{name}"]' in item_luau and f'offset = Vector2.new({x}, {y}), size = Vector2.new({w}, {h})' in item_luau, f'{name}: item Luau mapping')
 screen_names = ['farm-loot','loot-index','pets','eggs','free-rewards','playtime-gifts','quests','rebirth','decor','storm-pass','hud']
 images = [(root / 'screens' / (name + '.png'), (1920,1080)) for name in screen_names]
+classic = json.loads((root / 'icons-classic/manifest.json').read_text())
+check(set(classic['icons']) == {'shop','menu','farm','myFarm','lobby','badges'}, 'expected six original-style icons')
+classic_luau = (root / 'icons-classic/ClassicMenuIcons.luau').read_text()
+for name, icon in classic['icons'].items():
+    path = root / 'icons-classic' / icon['file']
+    check(hashlib.sha256(path.read_bytes()).hexdigest() == icon['sha256'], f'{name}: classic icon checksum')
+    check(icon['width'] == icon['height'], f'{name}: expected square standalone image')
+    # Image generation may use 254 for solid interiors (99.6% opacity).
+    check(icon['alphaRange'][0] == 0 and icon['alphaRange'][1] >= 250, f'{name}: expected transparent background and near-opaque artwork')
+    check(f'    {name} = ""' in classic_luau, f'{name}: missing icon adapter key')
+    images.append((path,(icon['width'],icon['height'])))
 surfaces = json.loads((root / 'surface-manifest.json').read_text())
 embedded = json.loads((root / 'surface-manifest.js').read_text().split('window.STORM_SURFACE_MANIFEST = ', 1)[1].removesuffix(';\n'))
 check(surfaces == embedded, 'surface manifest synchronization')
@@ -117,3 +128,4 @@ for name in ['screens.html','screens.css','screens-polish.css','screens.js','sur
     check((root/name).is_file(), f'missing {name}')
 print('PASS 24 item crops, item manifest/Luau synchronization, 11 full-HD PNGs, background and preview source files')
 print('PASS 23 polished surfaces: bounds, slice centers, PNG integrity, hash and JSON/JS/Luau synchronization')
+print('PASS six original-style standalone icons: PNG integrity, hashes, dimensions and adapter keys')

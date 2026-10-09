@@ -56,6 +56,10 @@ Headers still span the full modal interior width. No studs or repeated square pa
 - Pair color with text or icons: selected tab, equipped, claimed, locked, rarity and warning states must remain understandable without color alone.
 - Animate UI scale lightly if the game already supports animation preferences; never make a hover state the only input affordance.
 
+## Additional original-style icons
+
+The user also requested six new icons matching the very first glossy style. See `gui-assets/icons-classic/README.md`, its six standalone PNGs and `ClassicMenuIcons.luau`. Map the cart to Shop, backpack to Menu, cow to Farm, orange-roof house to My Farm, blue-roof house to Lobby, and medal to Badges. Each image has its own real Roblox upload ID; keep the two house actions distinct.
+
 ## Acceptance checks
 
 1. Desktop, narrow phone, tablet and gamepad navigation remain usable; no clipped labels, offscreen close buttons or hidden primary actions.
