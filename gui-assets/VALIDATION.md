@@ -4,7 +4,9 @@ Version 2 redesigned pack verified on 8 October 2026 (Australia/Perth). Previous
 
 ## Additional original-style icons — 9 October 2026
 
-- Six standalone 1254 × 1254 RGBA PNGs created using the first icon atlas as style reference: cart, backpack, cow, My Farm house, Lobby house and medal.
+- Revision 1.1 replaces only the My Farm building with a glossy red barn. The other five standalone PNGs were verified byte-for-byte unchanged from the prior commit. Manifest, preview, overview and Claude instructions now point to `my-farm-barn.png`.
+
+- Six standalone 1254 × 1254 RGBA PNGs created using the first icon atlas as style reference: cart, backpack, cow, My Farm barn, Lobby house and medal.
 - Actual alpha transparency verified. Five images span alpha 0–255; the medal spans 0–254 (99.6% solid interiors). No opaque background is baked into the icons.
 - All six images inspected individually and in a browser at 48px, 64px, 80px and 224px display sizes, on dark and light backgrounds.
 - Preview loaded all 24 image instances and six download links without JavaScript or HTTP errors. Dark/light/checker controls work; no horizontal page overflow at 390px width.

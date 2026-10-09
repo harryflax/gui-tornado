@@ -7,7 +7,7 @@ Six standalone **1254 × 1254 transparent PNGs** in the glossy, chunky style of 
 | Shop | [shop-cart.png](shop-cart.png) | Cyan shopping cart, gold frame, red handle |
 | Menu | [menu-backpack.png](menu-backpack.png) | Blue backpack, orange front pocket |
 | Farm | [farm-cow.png](farm-cow.png) | Black-and-white cow with pink muzzle |
-| My Farm | [my-farm-house.png](my-farm-house.png) | Orange-roof stone survival house |
+| My Farm | [my-farm-barn.png](my-farm-barn.png) | Red barn with white cross-braced doors |
 | Lobby | [lobby-house.png](lobby-house.png) | Blue-roof welcoming house with open doorway |
 | Badges | [badges-medal.png](badges-medal.png) | Gold star medal with red ribbon |
 
@@ -15,7 +15,7 @@ Six standalone **1254 × 1254 transparent PNGs** in the glossy, chunky style of 
 | --- | --- | --- |
 | <img src="shop-cart.png" width="220" alt="Shopping cart"> | <img src="menu-backpack.png" width="220" alt="Backpack"> | <img src="farm-cow.png" width="220" alt="Cow"> |
 | **My Farm** | **Lobby** | **Badges** |
-| <img src="my-farm-house.png" width="220" alt="My Farm house"> | <img src="lobby-house.png" width="220" alt="Lobby house"> | <img src="badges-medal.png" width="220" alt="Medal"> |
+| <img src="my-farm-barn.png" width="220" alt="My Farm barn"> | <img src="lobby-house.png" width="220" alt="Lobby house"> | <img src="badges-medal.png" width="220" alt="Medal"> |
 
 [View the complete set at menu sizes](overview.png).
 
@@ -31,7 +31,7 @@ Use these six images for their named navigation actions in my existing Roblox ga
 2. Set the six entries in `ClassicMenuIcons.ImageIds` in the included `ClassicMenuIcons.luau` module.
 3. Apply the corresponding image to the existing icon ImageLabel/ImageButton. The keys are `shop`, `menu`, `farm`, `myFarm`, `lobby`, `badges`.
 4. Keep icons square with `UIAspectRatioConstraint` and `ScaleType.Fit`. The files include transparent margins; size the image inside the existing button until the visible art matches neighboring icons. Test at 48, 64 and 80 displayed pixels.
-5. My Farm uses the orange-roof house. Lobby uses the blue-roof house. Farm uses the cow. Keep these three actions distinct.
+5. My Farm uses the red barn. Lobby uses the blue-roof house. Farm uses the cow. Keep these three actions distinct.
 6. Retain existing labels, click/touch/gamepad handlers, selection state and menu-opening logic. The module changes image appearance only.
 
 ```lua

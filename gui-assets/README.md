@@ -8,7 +8,7 @@ Version 2 redesigns the buttons, cards, panels, tabs and HUD with cleaner bevele
 
 ## Additional original-style icons
 
-[Six new glossy menu icons](icons-classic/README.md): shopping cart, backpack, cow, My Farm house, Lobby house and badges medal. These match the very first icon style and come as standalone transparent PNGs with a dedicated preview and Claude/Roblox instructions.
+[Six new glossy menu icons](icons-classic/README.md): shopping cart, backpack, cow, My Farm barn, Lobby house and badges medal. These match the very first icon style and come as standalone transparent PNGs with a dedicated preview and Claude/Roblox instructions.
 
 ## Preview
 

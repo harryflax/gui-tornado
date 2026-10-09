@@ -4,7 +4,7 @@ Icons.ImageIds = {
     shop = "", -- shop-cart.png
     menu = "", -- menu-backpack.png
     farm = "", -- farm-cow.png
-    myFarm = "", -- my-farm-house.png
+    myFarm = "", -- my-farm-barn.png
     lobby = "", -- lobby-house.png
     badges = "", -- badges-medal.png
 }

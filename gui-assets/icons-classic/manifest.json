@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "styleReference": "Original navigation atlas from commit 02d95a8",
   "format": "Standalone transparent PNGs; upload each complete image individually",
   "icons": {
@@ -40,7 +40,7 @@
       "sha256": "9b333a187a9ff7cac602e1bf9ddb62d596b27013284c14660d19d0aac2628b03"
     },
     "myFarm": {
-      "file": "my-farm-house.png",
+      "file": "my-farm-barn.png",
       "width": 1254,
       "height": 1254,
       "mode": "RGBA",
@@ -49,7 +49,7 @@
         0,
         255
       ],
-      "sha256": "ace0c61c9018c7d522b4804f2d0ef2b457240164179bd58bc9bce41bf8e40f4e"
+      "sha256": "26dc6c69a7385f27635fa5a12f2f0e55f9d618822f6ea56858e2347f2e0ac71e"
     },
     "lobby": {
       "file": "lobby-house.png",

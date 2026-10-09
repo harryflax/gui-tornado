@@ -58,7 +58,7 @@ Headers still span the full modal interior width. No studs or repeated square pa
 
 ## Additional original-style icons
 
-The user also requested six new icons matching the very first glossy style. See `gui-assets/icons-classic/README.md`, its six standalone PNGs and `ClassicMenuIcons.luau`. Map the cart to Shop, backpack to Menu, cow to Farm, orange-roof house to My Farm, blue-roof house to Lobby, and medal to Badges. Each image has its own real Roblox upload ID; keep the two house actions distinct.
+The user also requested six new icons matching the very first glossy style. See `gui-assets/icons-classic/README.md`, its six standalone PNGs and `ClassicMenuIcons.luau`. Map the cart to Shop, backpack to Menu, cow to Farm, red barn to My Farm, blue-roof house to Lobby, and medal to Badges. Each image has its own real Roblox upload ID; keep the barn and lobby actions distinct.
 
 ## Acceptance checks
 
